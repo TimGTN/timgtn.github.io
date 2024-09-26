@@ -1,0 +1,14 @@
+[
+  
+  
+    {
+      "title"       : "Textbox avec placeholder automatique",
+      "category"    : "",
+      "tags"        : "wpf, style",
+      "url"         : "/textbox-with-placeholder",
+      "date"        : "08-11-2024",
+      "description" : "Création d'un style de textbox avec placeholder automatique. Cela permettra de ne plus avoir à faire de modifications graphiques du textbox depuis le code PowerShell.",
+      "image"       : "/assets/images/textboxplaceholder/textbox-final-exemple.png"
+    } 
+  
+]

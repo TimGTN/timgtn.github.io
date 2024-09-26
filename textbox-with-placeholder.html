@@ -1,0 +1,647 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbox avec placeholder automatique</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" href="/assets/images/site-icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/d20144d690.js" crossorigin="anonymous"></script>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Textbox avec placeholder automatique</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Textbox avec placeholder automatique" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Création d’un style de textbox avec placeholder automatique. Cela permettra de ne plus avoir à faire de modifications graphiques du textbox depuis le code PowerShell." />
+<meta property="og:description" content="Création d’un style de textbox avec placeholder automatique. Cela permettra de ne plus avoir à faire de modifications graphiques du textbox depuis le code PowerShell." />
+<meta property="og:image" content="/assets/images/textboxplaceholder/textbox-final-exemple.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-08-11T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/textboxplaceholder/textbox-final-exemple.png" />
+<meta property="twitter:title" content="Textbox avec placeholder automatique" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-11T00:00:00+00:00","datePublished":"2024-08-11T00:00:00+00:00","description":"Création d’un style de textbox avec placeholder automatique. Cela permettra de ne plus avoir à faire de modifications graphiques du textbox depuis le code PowerShell.","headline":"Textbox avec placeholder automatique","image":"/assets/images/textboxplaceholder/textbox-final-exemple.png","mainEntityOfPage":{"@type":"WebPage","@id":"/textbox-with-placeholder"},"url":"/textbox-with-placeholder"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+  <body>
+    <header>
+    <nav>
+        <a href="/">
+            <svg id="site-icon" width="40" height="40" viewBox="0 0 48 48" preserveAspectRatio="xMidYMid" xmlns="http://www.w3.org/2000/svg">
+                <path id="icon-hexagon" fill="#153030" d="M46.061 16.112 30.634.685A2.273 2.273 0 0 0 28.24.134L7.618 7.25a2.324 2.324 0 0 0-1.5 1.671L1.324 29.73a2.313 2.313 0 0 0 .616 2.16l15.425 15.435a2.344 2.344 0 0 0 2.394.552l20.625-7.127a2.313 2.313 0 0 0 1.498-1.672l4.796-20.808a2.324 2.324 0 0 0-.616-2.158z"/>
+                <path fill="#ffdc6e" d="m45.798 8.21-8.236 20.62c-.16.403-.39.837-.752 1.16l-4.462 4.772a.641.641 0 0 1-1.11-.44l.02-6.533c-.01-.413.119-.887.249-1.362l8.236-20.62z"/>
+                <path fill="#f56f6b" d="m39.743 5.808 6.055 2.401.72-1.816c.641-1.615-.18-3.518-1.826-4.229-1.615-.64-3.518.182-4.229 1.827z"/>
+                <path fill="#ffefb4" d="M31.317 27.201a2.78 2.78 0 0 0-.058.588l-.022 6.533a.641.641 0 0 0 1.11.44l4.463-4.771c.152-.136.28-.292.39-.456z"/>
+                <path fill="#3b3b44" d="m31.246 31.715-.009 2.607a.642.642 0 0 0 1.11.44l1.781-1.904a3.82 3.82 0 0 0-1.267-.845c-.53-.21-1.099-.322-1.615-.298z"/>
+                <path fill="#fff" d="M22.33 21.044c-.09.272-.361.452-.813.814L9.224 30.716a1.688 1.688 0 0 1-2.17-.361 1.564 1.564 0 0 1 .271-2.17l11.118-8.044v-.181l-6.96-7.412a1.555 1.555 0 0 1 .09-2.17 1.476 1.476 0 0 1 2.17 0l8.406 8.95a1.175 1.175 0 0 1 .18 1.717zM18.172 27.733h6.69a1.356 1.356 0 1 1 0 2.712h-6.69a1.356 1.356 0 1 1 0-2.712zM14.945 35.872h6.36c1.811-.002 1.811 2.714 0 2.712h-6.36c-1.81.002-1.81-2.714 0-2.712zM26.438 35.872h1.55c1.81-.002 1.81 2.714 0 2.712h-1.55c-1.81.002-1.81-2.714 0-2.712z"/>
+            </svg>   
+            <span id="header-title">Ps BY TIM</span>     
+        </a>
+        
+            <a href="/tags">
+                <span>Tags</span>
+            </a>
+        
+        <form class="search-form">
+            <div class="search-inner">
+                <input type="text" id="search-input" list="dl-articles" placeholder="Chercher...">
+                
+            </div>
+        </form>
+    </nav>   
+</header>
+    <main>   
+      <div class="main-content-wrapper">
+        
+
+
+<div id="breadcrumbs" class="b-active">
+    
+    <a href="/">Accueil</a>
+    
+        
+            
+    <svg class="arrow" width="40" height="40" viewBox="0 0 41 40" xmlns="http://www.w3.org/2000/svg">
+	<path d="M35.389 21.205c-.176.527-.704.88-1.583 1.583L9.884 40.026a3.286 3.286 0 0 1-4.221-.704A3.043 3.043 0 0 1 6.19 35.1l21.635-15.654v-.352L14.282 4.671a3.025 3.025 0 0 1 .175-4.222 2.872 2.872 0 0 1 4.222 0l16.358 17.414a2.287 2.287 0 0 1 .352 3.342z"/>
+</svg>
+Textbox avec placeholder automatique
+        
+    
+    
+</div>
+        <div id="main-content">
+          <div class="post-page">
+  <h1>Textbox avec placeholder automatique</h1>
+  <div class="post-meta">
+    <i class="fa-regular fa-calendar"></i>
+    <span>08-11-2024</span>
+    <i id="tag-icon" class="fa-solid fa-tags"></i>
+    
+      <a class="tag-post" href="/tags/wpf/">wpf</a>
+      <span>, </span>
+    
+      <a class="tag-post" href="/tags/style/">style</a>
+      
+    
+  </div>
+  <div id="post-content">
+    <h2 id="introduction">Introduction</h2>
+
+<p>L’objectif est de créer un style de textbox simple permettant de gérer automatiquement un placeholder.<br />
+Cela permettra d’éviter de manipuler la propriété <code class="language-plaintext highlighter-rouge">Text</code> ainsi que les événements <code class="language-plaintext highlighter-rouge">TextChanged</code> et <code class="language-plaintext highlighter-rouge">Focused</code> depuis le code PowerShell.</p>
+
+<h2 id="le-projet-commence">Le projet commence</h2>
+
+<p>Démarrage du projet WPF sous Visual Studio et création du XAML de base :</p>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML complet --&gt;</span>
+<span class="p">&lt;</span><span class="nt">Window</span> <span class="na">xmlns</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
+        <span class="na">xmlns:x</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
+        <span class="na">Height</span><span class="p">=</span><span class="s">"200"</span> <span class="na">Width</span><span class="p">=</span><span class="s">"300"</span> <span class="na">Title</span><span class="p">=</span><span class="s">"Textbox with placeholder"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Grid</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">TextBox</span> <span class="na">Name</span><span class="p">=</span><span class="s">"TBX_InputBox"</span>  <span class="na">Width</span><span class="p">=</span><span class="s">"128"</span> <span class="na">Height</span><span class="p">=</span><span class="s">"32"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Grid</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">Window</span><span class="p">&gt;</span></code></pre></figure>
+
+<p>Le comportement souhaité du textbox necéssite une modification plus poussée du visuel par défaut.<br />
+Pour continuer, on va modifier une copie du style natif :</p>
+
+<p><img src="/assets/images/textboxplaceholder/textbox-edit-template.png" alt="Image" /></p>
+
+<p><img src="/assets/images/textboxplaceholder/textbox-style-name.png" alt="Image" /></p>
+
+<p>Le nommage du style est arbitraire, mieux vaut bien choisir pour s’y retrouver si le projet évolue.<br />
+Après validation, le style à modifier est généré dans les ressources de la fenêtre et est renseigné au niveau de la propriété <code class="language-plaintext highlighter-rouge">Style</code> du textbox :</p>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML complet --&gt;</span>
+<span class="p">&lt;</span><span class="nt">Window</span> <span class="na">xmlns</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
+        <span class="na">xmlns:x</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
+        <span class="na">Height</span><span class="p">=</span><span class="s">"200"</span> <span class="na">Width</span><span class="p">=</span><span class="s">"300"</span> <span class="na">Title</span><span class="p">=</span><span class="s">"Textbox with placeholder"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Window.Resources</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">SolidColorBrush</span> <span class="na">x:Key</span><span class="p">=</span><span class="s">"TextBox.Static.Border"</span> <span class="na">Color</span><span class="p">=</span><span class="s">"#FFABAdB3"</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">SolidColorBrush</span> <span class="na">x:Key</span><span class="p">=</span><span class="s">"TextBox.MouseOver.Border"</span> <span class="na">Color</span><span class="p">=</span><span class="s">"#FF7EB4EA"</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">SolidColorBrush</span> <span class="na">x:Key</span><span class="p">=</span><span class="s">"TextBox.Focus.Border"</span> <span class="na">Color</span><span class="p">=</span><span class="s">"#FF569DE5"</span><span class="p">/&gt;</span>
+<span class="hll">        <span class="p">&lt;</span><span class="nt">Style</span> <span class="na">x:Key</span><span class="p">=</span><span class="s">"ST_TextBoxWithPlaceholder"</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+</span>            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Background"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="p">{</span><span class="nc">x:Static </span><span class="py">SystemColors.WindowBrushKey</span><span class="p">}}</span><span class="s">"</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">StaticResource </span><span class="py">TextBox.Static.Border</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Foreground"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="p">{</span><span class="nc">x:Static </span><span class="py">SystemColors.ControlTextBrushKey</span><span class="p">}}</span><span class="s">"</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderThickness"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"1"</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"KeyboardNavigation.TabNavigation"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"None"</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"HorizontalContentAlignment"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Left"</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"FocusVisualStyle"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Null</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"AllowDrop"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"ScrollViewer.PanningMode"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"VerticalFirst"</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Stylus.IsFlicksEnabled"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"False"</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Template"</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">ControlTemplate</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">Border</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Background</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Background</span><span class="p">}</span><span class="s">"</span> <span class="na">BorderBrush</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderBrush</span><span class="p">}</span><span class="s">"</span> <span class="na">BorderThickness</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderThickness</span><span class="p">}</span><span class="s">"</span> <span class="na">SnapsToDevicePixels</span><span class="p">=</span><span class="s">"True"</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">ScrollViewer</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"PART_ContentHost"</span> <span class="na">Focusable</span><span class="p">=</span><span class="s">"false"</span> <span class="na">HorizontalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span> <span class="na">VerticalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">Border</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsEnabled"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"false"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Opacity"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"0.56"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsMouseOver"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">StaticResource </span><span class="py">TextBox.MouseOver.Border</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsKeyboardFocused"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">StaticResource </span><span class="py">TextBox.Focus.Border</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">ControlTemplate</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">Setter</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Style.Triggers</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">MultiTrigger</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">MultiTrigger.Conditions</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">Condition</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsInactiveSelectionHighlightEnabled"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">/&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">Condition</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsSelectionActive"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"false"</span><span class="p">/&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">MultiTrigger.Conditions</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"SelectionBrush"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="p">{</span><span class="nc">x:Static </span><span class="py">SystemColors.InactiveSelectionHighlightBrushKey</span><span class="p">}}</span><span class="s">"</span><span class="p">/&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">MultiTrigger</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">Style.Triggers</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">Style</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Window.Resources</span><span class="p">&gt;</span>  
+    <span class="p">&lt;</span><span class="nt">Grid</span><span class="p">&gt;</span>
+<span class="hll">        <span class="p">&lt;</span><span class="nt">TextBox</span> <span class="na">Style</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="py">ST_TextBoxWithPlaceholder</span><span class="p">}</span><span class="s">"</span> <span class="na">Name</span><span class="p">=</span><span class="s">"TBX_InputBox"</span>  <span class="na">Width</span><span class="p">=</span><span class="s">"128"</span> <span class="na">Height</span><span class="p">=</span><span class="s">"32"</span><span class="p">/&gt;</span>
+</span>    <span class="p">&lt;/</span><span class="nt">Grid</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">Window</span><span class="p">&gt;</span></code></pre></figure>
+
+<p>Le style par défaut du textbox est l’un des plus simple à comprendre.</p>
+
+<h2 id="explication-du-style-par-défaut">Explication du style par défaut</h2>
+
+<p>On y retrouve principalement les balises <code class="language-plaintext highlighter-rouge">Setter</code> qui permettent de modifier des propriétés du textbox.<br />
+Dans notre cas, on pourra en enlever certaines qui ne nous intéressent pas.<br />
+La plupart des propriétés ont des valeurs par défaut et les retirer du style n’est pas forcément impactant.</p>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML partiel --&gt;</span>
+<span class="p">&lt;</span><span class="nt">Style</span> <span class="na">x:Key</span><span class="p">=</span><span class="s">"ST_TextBoxWithPlaceholder"</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Background"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="p">{</span><span class="nc">x:Static </span><span class="py">SystemColors.WindowBrushKey</span><span class="p">}}</span><span class="s">"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">StaticResource </span><span class="py">TextBox.Static.Border</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Foreground"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="p">{</span><span class="nc">x:Static </span><span class="py">SystemColors.ControlTextBrushKey</span><span class="p">}}</span><span class="s">"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderThickness"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"1"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"KeyboardNavigation.TabNavigation"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"None"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"HorizontalContentAlignment"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Left"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"FocusVisualStyle"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Null</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"AllowDrop"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"ScrollViewer.PanningMode"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"VerticalFirst"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Stylus.IsFlicksEnabled"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"False"</span><span class="p">/&gt;</span>
+    <span class="c">&lt;!-- [...] --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">Style</span><span class="p">&gt;</span></code></pre></figure>
+
+<p>Nous avons aussi le <code class="language-plaintext highlighter-rouge">ControlTemplate</code>, élément définissant en partie le comportement et le visuel du textbox.<br />
+En partie car certaines choses ne sont pas traitées dans le XAML mais en arrière plan, notamment la gestion du contenu au niveau du <code class="language-plaintext highlighter-rouge">ScrollViewer</code> nommé “PART_ContentHost”.</p>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML partiel --&gt;</span>
+<span class="p">&lt;</span><span class="nt">Style</span> <span class="na">x:Key</span><span class="p">=</span><span class="s">"ST_TextBoxWithPlaceholder"</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- [...] --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Template"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+<span class="hll">            <span class="p">&lt;</span><span class="nt">ControlTemplate</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+</span>                <span class="p">&lt;</span><span class="nt">Border</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Background</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Background</span><span class="p">}</span><span class="s">"</span> <span class="na">BorderBrush</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderBrush</span><span class="p">}</span><span class="s">"</span> 
+                        <span class="na">BorderThickness</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderThickness</span><span class="p">}</span><span class="s">"</span> <span class="na">SnapsToDevicePixels</span><span class="p">=</span><span class="s">"True"</span><span class="p">&gt;</span>
+<span class="hll">                    <span class="p">&lt;</span><span class="nt">ScrollViewer</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"PART_ContentHost"</span> <span class="na">Focusable</span><span class="p">=</span><span class="s">"false"</span> <span class="na">HorizontalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span> 
+</span>                                  <span class="na">VerticalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">Border</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsEnabled"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"false"</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Opacity"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"0.56"</span><span class="p">/&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsMouseOver"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">StaticResource </span><span class="py">TextBox.MouseOver.Border</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsKeyboardFocused"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">StaticResource </span><span class="py">TextBox.Focus.Border</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">ControlTemplate</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Setter</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- [...] --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">Style</span><span class="p">&gt;</span></code></pre></figure>
+
+<h2 id="présentation-du-controltemplate">Présentation du ControlTemplate</h2>
+
+<p>Comme dit précedemment, le <code class="language-plaintext highlighter-rouge">ControlTemplate</code> permet de définir le visuel du composant concerné.<br />
+Dans le cas du textbox, son apparence est juste composée par un élément <code class="language-plaintext highlighter-rouge">Border</code>.<br />
+Les propriétés <code class="language-plaintext highlighter-rouge">Background</code> et <code class="language-plaintext highlighter-rouge">BorderBrush</code> de la bordure sont définies par liaison aux propriétés du textbox via <code class="language-plaintext highlighter-rouge">TemplateBinding</code>.</p>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML partiel --&gt;</span>
+<span class="p">&lt;</span><span class="nt">ControlTemplate</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">Border</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Background</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Background</span><span class="p">}</span><span class="s">"</span> <span class="na">BorderBrush</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderBrush</span><span class="p">}</span><span class="s">"</span> 
+</span><span class="hll">            <span class="na">BorderThickness</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderThickness</span><span class="p">}</span><span class="s">"</span> <span class="na">SnapsToDevicePixels</span><span class="p">=</span><span class="s">"True"</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">ScrollViewer</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"PART_ContentHost"</span> <span class="na">Focusable</span><span class="p">=</span><span class="s">"false"</span> <span class="na">HorizontalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span> 
+                        <span class="na">VerticalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Border</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsEnabled"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"false"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Opacity"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"0.56"</span><span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsMouseOver"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">StaticResource </span><span class="py">TextBox.MouseOver.Border</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsKeyboardFocused"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">StaticResource </span><span class="py">TextBox.Focus.Border</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ControlTemplate</span><span class="p">&gt;</span></code></pre></figure>
+
+<p>On retrouve aussi la propriété <code class="language-plaintext highlighter-rouge">Triggers</code> du <code class="language-plaintext highlighter-rouge">ControlTemplate</code>, permettant de définir les comportements du textbox.<br />
+Par exemple, le déclencheur avec la propriété <code class="language-plaintext highlighter-rouge">IsMouseOver</code> qui permet de changer la couleur de bordure lorsque la souris passe sur le textbox.<br />
+C’est d’ailleurs de là que provient la couleur bleu qu’on ne pas modifier par défaut.</p>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML partiel --&gt;</span>
+<span class="hll"><span class="p">&lt;</span><span class="nt">SolidColorBrush</span> <span class="na">x:Key</span><span class="p">=</span><span class="s">"TextBox.MouseOver.Border"</span> <span class="na">Color</span><span class="p">=</span><span class="s">"#FF7EB4EA"</span><span class="p">/&gt;</span>
+</span><span class="c">&lt;!-- [...] --&gt;</span>
+<span class="p">&lt;</span><span class="nt">ControlTemplate</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Border</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Background</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Background</span><span class="p">}</span><span class="s">"</span> <span class="na">BorderBrush</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderBrush</span><span class="p">}</span><span class="s">"</span> 
+            <span class="na">BorderThickness</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderThickness</span><span class="p">}</span><span class="s">"</span> <span class="na">SnapsToDevicePixels</span><span class="p">=</span><span class="s">"True"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ScrollViewer</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"PART_ContentHost"</span> <span class="na">Focusable</span><span class="p">=</span><span class="s">"false"</span> <span class="na">HorizontalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span> 
+                        <span class="na">VerticalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Border</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsEnabled"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"false"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Opacity"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"0.56"</span><span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+<span class="hll">        <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsMouseOver"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+</span><span class="hll">            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">StaticResource </span><span class="py">TextBox.MouseOver.Border</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+</span><span class="hll">        <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsKeyboardFocused"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">StaticResource </span><span class="py">TextBox.Focus.Border</span><span class="p">}</span><span class="s">"</span><span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ControlTemplate</span><span class="p">&gt;</span></code></pre></figure>
+
+<p>Maintenant que c’est plus clair, on peut passer à la suite !</p>
+
+<h2 id="nettoyage-préliminaire">Nettoyage préliminaire</h2>
+
+<p>Les choses qui ne nous intéressent pas sont retirées du style, si besoin on pourra les remettre au cas par cas plus tard.<br />
+On se retrouve avec un style simple, pas très beau mais fonctionnel :</p>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML complet --&gt;</span>
+<span class="p">&lt;</span><span class="nt">Window</span> <span class="na">xmlns</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
+        <span class="na">xmlns:x</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
+        <span class="na">Height</span><span class="p">=</span><span class="s">"200"</span> <span class="na">Width</span><span class="p">=</span><span class="s">"300"</span> <span class="na">Title</span><span class="p">=</span><span class="s">"Textbox with placeholder"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Window.Resources</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">Style</span> <span class="na">x:Key</span><span class="p">=</span><span class="s">"ST_TextBoxWithPlaceholder"</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Template"</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">ControlTemplate</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">Border</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Background</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Background</span><span class="p">}</span><span class="s">"</span> <span class="na">BorderBrush</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderBrush</span><span class="p">}</span><span class="s">"</span> 
+                                <span class="na">BorderThickness</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderThickness</span><span class="p">}</span><span class="s">"</span> <span class="na">SnapsToDevicePixels</span><span class="p">=</span><span class="s">"True"</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">ScrollViewer</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"PART_ContentHost"</span> <span class="na">Focusable</span><span class="p">=</span><span class="s">"false"</span> <span class="na">HorizontalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span> 
+                                          <span class="na">VerticalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">Border</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsMouseOver"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"LightBlue"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsFocused"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Blue"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">ControlTemplate</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">Setter</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">Style</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Window.Resources</span><span class="p">&gt;</span>  
+    <span class="p">&lt;</span><span class="nt">Grid</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">TextBox</span> <span class="na">Style</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="py">ST_TextBoxWithPlaceholder</span><span class="p">}</span><span class="s">"</span> <span class="na">Name</span><span class="p">=</span><span class="s">"TBX_InputBox"</span>  <span class="na">Width</span><span class="p">=</span><span class="s">"128"</span> <span class="na">Height</span><span class="p">=</span><span class="s">"32"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Grid</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">Window</span><span class="p">&gt;</span></code></pre></figure>
+
+<p><img src="/assets/images/textboxplaceholder/textbox-style-basic-showcase.png" alt="Image" /></p>
+
+<h2 id="modification-du-template">Modification du template</h2>
+
+<p>On peut maintenant modifier le <code class="language-plaintext highlighter-rouge">ControlTemplate</code> afin d’y ajouter le placeholder.<br />
+La modification est très libre et peut être réalisée de différentes manières.</p>
+
+<p>Dans notre cas, le plus simple est d’ajouter un nouveau composant <code class="language-plaintext highlighter-rouge">TextBlock</code> au même niveau que le <code class="language-plaintext highlighter-rouge">ScrollViewer</code>.<br />
+En revanche, un élément <code class="language-plaintext highlighter-rouge">Border</code> ne peut avoir qu’un seul enfant, il faut aussi ajouter un <code class="language-plaintext highlighter-rouge">Grid</code> pour régler le problème.</p>
+
+<p>L’élément <code class="language-plaintext highlighter-rouge">TextBlock</code> est nommé arbitrairement “PART_PlaceHolder” pour pouvoir le cibler dans les déclencheurs.</p>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML partiel --&gt;</span>
+<span class="p">&lt;</span><span class="nt">ControlTemplate</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+    <span class="c">&lt;!--&lt;Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" </span>
+<span class="c">            BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True"&gt;</span>
+<span class="c">        &lt;ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" </span>
+<span class="c">                        VerticalScrollBarVisibility="Hidden"/&gt;</span>
+<span class="c">    &lt;/Border&gt;--&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Border</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Background</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Background</span><span class="p">}</span><span class="s">"</span> <span class="na">BorderBrush</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderBrush</span><span class="p">}</span><span class="s">"</span> 
+            <span class="na">BorderThickness</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderThickness</span><span class="p">}</span><span class="s">"</span> <span class="na">SnapsToDevicePixels</span><span class="p">=</span><span class="s">"True"</span><span class="p">&gt;</span>
+<span class="hll">        <span class="p">&lt;</span><span class="nt">Grid</span><span class="p">&gt;</span>
+</span><span class="hll">            <span class="p">&lt;</span><span class="nt">TextBlock</span> <span class="na">Text</span><span class="p">=</span><span class="s">"PlaceHolder"</span> <span class="na">Foreground</span><span class="p">=</span><span class="s">"Gray"</span> <span class="na">Name</span><span class="p">=</span><span class="s">"PART_PlaceHolder"</span><span class="p">/&gt;</span>
+</span>            <span class="p">&lt;</span><span class="nt">ScrollViewer</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"PART_ContentHost"</span> <span class="na">Focusable</span><span class="p">=</span><span class="s">"false"</span> <span class="na">HorizontalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span> 
+                            <span class="na">VerticalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+<span class="hll">        <span class="p">&lt;/</span><span class="nt">Grid</span><span class="p">&gt;</span>
+</span>    <span class="p">&lt;/</span><span class="nt">Border</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- [...] --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ControlTemplate</span><span class="p">&gt;</span></code></pre></figure>
+
+<p><img src="/assets/images/textboxplaceholder/textbox-placeholder-basic.png" alt="Image" /></p>
+
+<p>Le placeholder est maintenant visible mais ne se cache pas automatiquement lors du focus ou lorsqu’une saisie est présente.</p>
+
+<h2 id="ajout-dun-datatrigger">Ajout d’un DataTrigger</h2>
+
+<p>Comme le <code class="language-plaintext highlighter-rouge">Trigger</code>, le <code class="language-plaintext highlighter-rouge">DataTrigger</code> est un moyen de modifier une propriété en se basant sur le test d’une valeur.<br />
+L’avantage du <code class="language-plaintext highlighter-rouge">DataTrigger</code> est qu’il n’est pas limité à une simple propriété (grâce au <code class="language-plaintext highlighter-rouge">Binding</code>).</p>
+
+<p>On peut ainsi tester la valeur de la propriété <code class="language-plaintext highlighter-rouge">Text.Length</code> et changer l’état de visibilité du placeholder en conséquence.</p>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML complet --&gt;</span>
+<span class="p">&lt;</span><span class="nt">Window</span> <span class="na">xmlns</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
+        <span class="na">xmlns:x</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
+        <span class="na">Height</span><span class="p">=</span><span class="s">"200"</span> <span class="na">Width</span><span class="p">=</span><span class="s">"300"</span> <span class="na">Title</span><span class="p">=</span><span class="s">"Textbox with placeholder"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Window.Resources</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">Style</span> <span class="na">x:Key</span><span class="p">=</span><span class="s">"ST_TextBoxWithPlaceholder"</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Template"</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">ControlTemplate</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">Border</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Background</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Background</span><span class="p">}</span><span class="s">"</span> <span class="na">BorderBrush</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderBrush</span><span class="p">}</span><span class="s">"</span> 
+                                <span class="na">BorderThickness</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderThickness</span><span class="p">}</span><span class="s">"</span> <span class="na">SnapsToDevicePixels</span><span class="p">=</span><span class="s">"True"</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Grid</span><span class="p">&gt;</span>
+<span class="hll">                                <span class="p">&lt;</span><span class="nt">TextBlock</span> <span class="na">Name</span><span class="p">=</span><span class="s">"PART_PlaceHolder"</span> <span class="na">Text</span><span class="p">=</span><span class="s">"PlaceHolder"</span> <span class="na">Visibility</span><span class="p">=</span><span class="s">"Hidden"</span> <span class="na">Foreground</span><span class="p">=</span><span class="s">"Gray"</span><span class="p">/&gt;</span>
+</span>                                <span class="p">&lt;</span><span class="nt">ScrollViewer</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"PART_ContentHost"</span> <span class="na">Focusable</span><span class="p">=</span><span class="s">"false"</span> <span class="na">HorizontalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span> 
+                                              <span class="na">VerticalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Grid</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">Border</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+<span class="hll">                            <span class="p">&lt;</span><span class="nt">DataTrigger</span> <span class="na">Binding</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">Binding </span><span class="py">RelativeSource</span><span class="p">={</span><span class="nc">RelativeSource </span><span class="py">Mode</span><span class="p">=</span><span class="nx">Self</span><span class="p">},</span> <span class="py">Path</span><span class="p">=</span><span class="nx">Text.Length</span><span class="p">}</span><span class="s">"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"0"</span><span class="p">&gt;</span>
+</span><span class="hll">                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Visibility"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"PART_PlaceHolder"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Visible"</span><span class="p">/&gt;</span>
+</span><span class="hll">                            <span class="p">&lt;/</span><span class="nt">DataTrigger</span><span class="p">&gt;</span>
+</span>                            <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsMouseOver"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"LightBlue"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsFocused"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Blue"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">ControlTemplate</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">Setter</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">Style</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Window.Resources</span><span class="p">&gt;</span>   
+    <span class="p">&lt;</span><span class="nt">Grid</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">TextBox</span> <span class="na">Style</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="py">ST_TextBoxWithPlaceholder</span><span class="p">}</span><span class="s">"</span> <span class="na">Name</span><span class="p">=</span><span class="s">"TBX_InputBox"</span>  <span class="na">Width</span><span class="p">=</span><span class="s">"128"</span> <span class="na">Height</span><span class="p">=</span><span class="s">"32"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Grid</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">Window</span><span class="p">&gt;</span></code></pre></figure>
+
+<p>La syntaxe <code class="language-plaintext highlighter-rouge">Binding RelativeSource={RelativeSource Mode=Self}</code> correspond à une liaison de données du textbox sur lui même afin d’accéder à sa propriété <code class="language-plaintext highlighter-rouge">Text</code>.</p>
+
+<p>Par défaut, on cache le placeholder (<code class="language-plaintext highlighter-rouge">Visibility="Hidden"</code>), sa visibilité est rendue lorsque la longueur du texte est égale à 0.</p>
+
+<p>Il est aussi possible aussi d’ajouter facilement le masquage du placeholder lorsque le textbox prend le focus.<br />
+Ça sera implémenté plus tard mais rien n’empêche que vous essayiez de le faire par vous même avant.</p>
+
+<h2 id="changement-du-texte-de-placeholder">Changement du texte de placeholder</h2>
+
+<p>Suivant le besoin, le placeholder peut être amené à changer de texte (“Rechercher…”,”Nom d’utilisateur…”).<br />
+Pour l’instant le texte est spécifié en dur dans le <code class="language-plaintext highlighter-rouge">ControlTemplate</code> : <code class="language-plaintext highlighter-rouge">&lt;TextBlock Text="PlaceHolder" [...]\&gt;</code>.</p>
+
+<p>Afin de pouvoir configurer le placeholder et donc la propriété <code class="language-plaintext highlighter-rouge">Text</code>, on peut se servir de la propriété <a href="https://learn.microsoft.com/fr-fr/dotnet/api/system.windows.frameworkelement.tag?view=netframework-4.8.1"><code class="language-plaintext highlighter-rouge">Tag</code></a>.<br />
+Et comme vu précédemment, on peut réaliser une liaison de données dans le template grâce au <code class="language-plaintext highlighter-rouge">TemplateBinding</code> :</p>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML complet --&gt;</span>
+<span class="p">&lt;</span><span class="nt">Window</span> <span class="na">xmlns</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
+        <span class="na">xmlns:x</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
+        <span class="na">Height</span><span class="p">=</span><span class="s">"200"</span> <span class="na">Width</span><span class="p">=</span><span class="s">"300"</span> <span class="na">Title</span><span class="p">=</span><span class="s">"Textbox with placeholder"</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">Window.Resources</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">Style</span> <span class="na">x:Key</span><span class="p">=</span><span class="s">"ST_TextBoxWithPlaceholder"</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+<span class="hll">            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Tag"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Input..."</span><span class="p">/&gt;</span>
+</span>            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Template"</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">ControlTemplate</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">Border</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Background</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Background</span><span class="p">}</span><span class="s">"</span> <span class="na">BorderBrush</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderBrush</span><span class="p">}</span><span class="s">"</span> 
+                                <span class="na">BorderThickness</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderThickness</span><span class="p">}</span><span class="s">"</span> <span class="na">SnapsToDevicePixels</span><span class="p">=</span><span class="s">"True"</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Grid</span><span class="p">&gt;</span>
+<span class="hll">                                <span class="p">&lt;</span><span class="nt">TextBlock</span> <span class="na">Text</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Tag</span><span class="p">}</span><span class="s">"</span> <span class="na">Foreground</span><span class="p">=</span><span class="s">"Gray"</span> <span class="na">Name</span><span class="p">=</span><span class="s">"PART_PlaceHolder"</span> <span class="na">Visibility</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+</span>                                <span class="p">&lt;</span><span class="nt">ScrollViewer</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"PART_ContentHost"</span> <span class="na">Focusable</span><span class="p">=</span><span class="s">"false"</span> <span class="na">HorizontalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span> 
+                                          <span class="na">VerticalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Grid</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">Border</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">DataTrigger</span> <span class="na">Binding</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">Binding </span><span class="py">RelativeSource</span><span class="p">={</span><span class="nc">RelativeSource </span><span class="py">Mode</span><span class="p">=</span><span class="nx">Self</span><span class="p">},</span> <span class="py">Path</span><span class="p">=</span><span class="nx">Text.Length</span><span class="p">}</span><span class="s">"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"0"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Visibility"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"PART_PlaceHolder"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Visible"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">DataTrigger</span><span class="p">&gt;</span>
+
+                            <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsMouseOver"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"LightBlue"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsFocused"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Blue"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">ControlTemplate</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">Setter</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">Style</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Window.Resources</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">UniformGrid</span> <span class="na">Rows</span><span class="p">=</span><span class="s">"3"</span><span class="p">&gt;</span>
+        <span class="c">&lt;!--Default placeholder value--&gt;</span>
+        <span class="p">&lt;</span><span class="nt">TextBox</span> <span class="na">Style</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="py">ST_TextBoxWithPlaceholder</span><span class="p">}</span><span class="s">"</span> 
+                 <span class="na">Name</span><span class="p">=</span><span class="s">"TBX_InputBox"</span> <span class="na">Width</span><span class="p">=</span><span class="s">"128"</span> <span class="na">Height</span><span class="p">=</span><span class="s">"32"</span><span class="p">/&gt;</span>
+
+        <span class="c">&lt;!--Changed placeholder--&gt;</span>
+        <span class="p">&lt;</span><span class="nt">TextBox</span> <span class="na">Style</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="py">ST_TextBoxWithPlaceholder</span><span class="p">}</span><span class="s">"</span> 
+<span class="hll">                 <span class="na">Width</span><span class="p">=</span><span class="s">"128"</span> <span class="na">Height</span><span class="p">=</span><span class="s">"32"</span> <span class="na">Tag</span><span class="p">=</span><span class="s">"Search..."</span><span class="p">/&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">TextBox</span> <span class="na">Style</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="py">ST_TextBoxWithPlaceholder</span><span class="p">}</span><span class="s">"</span> 
+<span class="hll">                 <span class="na">Width</span><span class="p">=</span><span class="s">"128"</span> <span class="na">Height</span><span class="p">=</span><span class="s">"32"</span> <span class="na">Tag</span><span class="p">=</span><span class="s">"Computer..."</span><span class="p">/&gt;</span>
+</span>    <span class="p">&lt;/</span><span class="nt">UniformGrid</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">Window</span><span class="p">&gt;</span></code></pre></figure>
+
+<p>Les propriétés définies dans le style sont toujours écrasés si spécifiés directement au niveau du composant.</p>
+
+<p><img src="/assets/images/textboxplaceholder/textbox-change-placeholder.png" alt="Image" /></p>
+
+<h2 id="amélioration-finale">Amélioration finale</h2>
+
+<p>Dans un premier temps, on ajoute le masquage du placeholder quand le <code class="language-plaintext highlighter-rouge">TextBox</code> prend le focus :</p>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML partiel --&gt;</span>
+<span class="p">&lt;</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- [...] --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsFocused"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+<span class="hll">        <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Visibility"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"PART_PlaceHolder"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Blue"</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span></code></pre></figure>
+
+<p>Puis on peut modifier le design comme on le souhaite :</p>
+<ul>
+  <li>Coins arrondis avec La propriété <code class="language-plaintext highlighter-rouge">CornerRadius</code> de la bordure.</li>
+  <li>Modification dynamique des couleurs lors des interactions (<code class="language-plaintext highlighter-rouge">IsFocused</code>, <code class="language-plaintext highlighter-rouge">IsMouseOver</code>…).</li>
+  <li>Couleur de texte du placeholder en se basant sur le <code class="language-plaintext highlighter-rouge">Foreground</code> parent et en jouant sur la propriété <code class="language-plaintext highlighter-rouge">Opacity</code>.</li>
+  <li>Alignements et marges.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-xaml" data-lang="xaml"><span class="c">&lt;!-- XAML complet --&gt;</span>
+<span class="p">&lt;</span><span class="nt">Window</span> <span class="na">xmlns</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
+        <span class="na">xmlns:x</span><span class="p">=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
+        <span class="na">Height</span><span class="p">=</span><span class="s">"200"</span> <span class="na">Width</span><span class="p">=</span><span class="s">"300"</span> <span class="na">Title</span><span class="p">=</span><span class="s">"Textbox with placeholder"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">Window.Resources</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">Style</span> <span class="na">x:Key</span><span class="p">=</span><span class="s">"ST_TextBoxWithPlaceholder"</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Tag"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Input..."</span><span class="p">/&gt;</span>
+<span class="hll">            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"VerticalContentAlignment"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Center"</span><span class="p">/&gt;</span>
+</span><span class="hll">            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Padding"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"8,0"</span><span class="p">/&gt;</span>
+</span>            <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Template"</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">ControlTemplate</span> <span class="na">TargetType</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">x:Type </span><span class="py">TextBox</span><span class="p">}</span><span class="s">"</span><span class="p">&gt;</span>
+<span class="hll">                        <span class="p">&lt;</span><span class="nt">Border</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"border"</span> <span class="na">CornerRadius</span><span class="p">=</span><span class="s">"3"</span>
+</span>                                <span class="na">Background</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Background</span><span class="p">}</span><span class="s">"</span> <span class="na">BorderBrush</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderBrush</span><span class="p">}</span><span class="s">"</span> 
+                                <span class="na">BorderThickness</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">BorderThickness</span><span class="p">}</span><span class="s">"</span> <span class="na">SnapsToDevicePixels</span><span class="p">=</span><span class="s">"True"</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Grid</span><span class="p">&gt;</span>
+<span class="hll">                                <span class="p">&lt;</span><span class="nt">TextBlock</span> <span class="na">VerticalAlignment</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">VerticalContentAlignment</span><span class="p">}</span><span class="s">"</span> 
+</span><span class="hll">                                           <span class="na">Foreground</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Foreground</span><span class="p">}</span><span class="s">"</span> <span class="na">Opacity</span><span class="p">=</span><span class="s">"0.5"</span> <span class="na">Margin</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Padding</span><span class="p">}</span><span class="s">"</span>
+</span>                                           <span class="na">Text</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">TemplateBinding </span><span class="py">Tag</span><span class="p">}</span><span class="s">"</span> <span class="na">Name</span><span class="p">=</span><span class="s">"PART_PlaceHolder"</span> <span class="na">Visibility</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">ScrollViewer</span> <span class="na">x:Name</span><span class="p">=</span><span class="s">"PART_ContentHost"</span> <span class="na">Focusable</span><span class="p">=</span><span class="s">"false"</span> <span class="na">HorizontalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span> 
+                                              <span class="na">VerticalScrollBarVisibility</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">Grid</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">Border</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">DataTrigger</span> <span class="na">Binding</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">Binding </span><span class="py">RelativeSource</span><span class="p">={</span><span class="nc">RelativeSource </span><span class="py">Mode</span><span class="p">=</span><span class="nx">Self</span><span class="p">},</span> <span class="py">Path</span><span class="p">=</span><span class="nx">Text.Length</span><span class="p">}</span><span class="s">"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"0"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Visibility"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"PART_PlaceHolder"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Visible"</span><span class="p">/&gt;</span>
+                            <span class="p">&lt;/</span><span class="nt">DataTrigger</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsMouseOver"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                                <span class="c">&lt;!--Blending of textbox Borderbrush color and white to make it lighter--&gt;</span>
+<span class="hll">                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span><span class="p">&gt;</span>
+</span><span class="hll">                                    <span class="p">&lt;</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+</span><span class="hll">                                        <span class="p">&lt;</span><span class="nt">LinearGradientBrush</span> <span class="na">SpreadMethod</span><span class="p">=</span><span class="s">"Repeat"</span> <span class="na">EndPoint</span><span class="p">=</span><span class="s">"0,0"</span><span class="p">&gt;</span>
+</span><span class="hll">                                            <span class="p">&lt;</span><span class="nt">GradientStop</span> <span class="na">Color</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">Binding </span><span class="py">RelativeSource</span><span class="p">={</span><span class="nc">RelativeSource </span><span class="py">Mode</span><span class="p">=</span><span class="nx">FindAncestor</span><span class="p">,</span> <span class="py">AncestorType</span><span class="p">=</span><span class="nx">TextBox</span><span class="p">},</span> <span class="py">Path</span><span class="p">=</span><span class="nx">BorderBrush.Color</span><span class="p">}</span><span class="s">"</span> <span class="na">Offset</span><span class="p">=</span><span class="s">"0"</span> <span class="p">/&gt;</span>
+</span><span class="hll">                                            <span class="p">&lt;</span><span class="nt">GradientStop</span> <span class="na">Color</span><span class="p">=</span><span class="s">"#FFF"</span> <span class="na">Offset</span><span class="p">=</span><span class="s">"1"</span><span class="p">/&gt;</span>
+</span><span class="hll">                                        <span class="p">&lt;/</span><span class="nt">LinearGradientBrush</span><span class="p">&gt;</span>
+</span><span class="hll">                                    <span class="p">&lt;/</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+</span><span class="hll">                                <span class="p">&lt;/</span><span class="nt">Setter</span><span class="p">&gt;</span>
+</span>                            <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">Trigger</span> <span class="na">Property</span><span class="p">=</span><span class="s">"IsFocused"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"Visibility"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"PART_PlaceHolder"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"Hidden"</span><span class="p">/&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderThickness"</span> <span class="na">Value</span><span class="p">=</span><span class="s">"2"</span><span class="p">/&gt;</span>
+                                <span class="c">&lt;!--Blending of textbox Borderbrush color and semi-transparent black to make it darker--&gt;</span>
+<span class="hll">                                <span class="p">&lt;</span><span class="nt">Setter</span> <span class="na">Property</span><span class="p">=</span><span class="s">"BorderBrush"</span> <span class="na">TargetName</span><span class="p">=</span><span class="s">"border"</span><span class="p">&gt;</span>
+</span><span class="hll">                                    <span class="p">&lt;</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+</span><span class="hll">                                        <span class="p">&lt;</span><span class="nt">LinearGradientBrush</span> <span class="na">SpreadMethod</span><span class="p">=</span><span class="s">"Repeat"</span> <span class="na">EndPoint</span><span class="p">=</span><span class="s">"0,0"</span><span class="p">&gt;</span>
+</span><span class="hll">                                            <span class="p">&lt;</span><span class="nt">GradientStop</span> <span class="na">Color</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">Binding </span><span class="py">RelativeSource</span><span class="p">={</span><span class="nc">RelativeSource </span><span class="py">Mode</span><span class="p">=</span><span class="nx">FindAncestor</span><span class="p">,</span> <span class="py">AncestorType</span><span class="p">=</span><span class="nx">TextBox</span><span class="p">},</span> <span class="py">Path</span><span class="p">=</span><span class="nx">BorderBrush.Color</span><span class="p">}</span><span class="s">"</span> <span class="na">Offset</span><span class="p">=</span><span class="s">"0"</span> <span class="p">/&gt;</span>
+</span><span class="hll">                                            <span class="p">&lt;</span><span class="nt">GradientStop</span> <span class="na">Color</span><span class="p">=</span><span class="s">"#01000000"</span> <span class="na">Offset</span><span class="p">=</span><span class="s">"1"</span><span class="p">/&gt;</span>
+</span><span class="hll">                                        <span class="p">&lt;/</span><span class="nt">LinearGradientBrush</span><span class="p">&gt;</span>
+</span><span class="hll">                                    <span class="p">&lt;/</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+</span><span class="hll">                                <span class="p">&lt;/</span><span class="nt">Setter</span><span class="p">&gt;</span>
+</span>                            <span class="p">&lt;/</span><span class="nt">Trigger</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">ControlTemplate.Triggers</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">ControlTemplate</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">Setter.Value</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">Setter</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">Style</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Window.Resources</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">UniformGrid</span> <span class="na">Rows</span><span class="p">=</span><span class="s">"3"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">TextBox</span> <span class="na">Width</span><span class="p">=</span><span class="s">"128"</span> <span class="na">Height</span><span class="p">=</span><span class="s">"32"</span> <span class="na">Style</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="py">ST_TextBoxWithPlaceholder</span><span class="p">}</span><span class="s">"</span>
+<span class="hll">                 <span class="na">Foreground</span><span class="p">=</span><span class="s">"Blue"</span> <span class="na">BorderBrush</span><span class="p">=</span><span class="s">"Blue"</span> <span class="na">Tag</span><span class="p">=</span><span class="s">"User..."</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;/</span><span class="nt">TextBox</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">TextBox</span> <span class="na">Name</span><span class="p">=</span><span class="s">"TBX_InputBox"</span> <span class="na">Width</span><span class="p">=</span><span class="s">"128"</span> <span class="na">Height</span><span class="p">=</span><span class="s">"32"</span> <span class="na">Style</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="py">ST_TextBoxWithPlaceholder</span><span class="p">}</span><span class="s">"</span>
+<span class="hll">                 <span class="na">Tag</span><span class="p">=</span><span class="s">"Search..."</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;/</span><span class="nt">TextBox</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">TextBox</span> <span class="na">Width</span><span class="p">=</span><span class="s">"128"</span> <span class="na">Height</span><span class="p">=</span><span class="s">"32"</span> <span class="na">Style</span><span class="p">=</span><span class="s">"</span><span class="p">{</span><span class="nc">DynamicResource </span><span class="py">ST_TextBoxWithPlaceholder</span><span class="p">}</span><span class="s">"</span>
+<span class="hll">                 <span class="na">Foreground</span><span class="p">=</span><span class="s">"Red"</span> <span class="na">BorderBrush</span><span class="p">=</span><span class="s">"Red"</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;/</span><span class="nt">TextBox</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">UniformGrid</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">Window</span><span class="p">&gt;</span></code></pre></figure>
+
+<p>La syntaxe <code class="language-plaintext highlighter-rouge">{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TextBox}, Path=BorderBrush.Color}</code> correspond à une liaison de données sur le premier composant parent <code class="language-plaintext highlighter-rouge">TextBox</code> identifié grâce au mode <code class="language-plaintext highlighter-rouge">FindAncestor</code>.<br />
+Cette liaison permet de récupérer dynamiquement la couleur de la propriété <code class="language-plaintext highlighter-rouge">BorderBrush</code> et de la changer au niveau des <code class="language-plaintext highlighter-rouge">Trigger</code>.</p>
+
+<p><img src="/assets/images/textboxplaceholder/textbox-final-exemple.png" alt="Image" /></p>
+
+  </div>
+</div>
+
+        </div>
+        <div id="search-results-wrapper" class="hidden">
+          <h1>Articles trouvés</h1>
+          <div id="search-results"></div>
+        </div>
+      </div>      
+      <aside id="sidebar">
+    <div id="sidebar-about" class="border padding-left">
+        <h1>À propos</h1>
+        <p>Si comme moi, vous aimez écrire du code Powershell pour automatiser la moindre chose, alors vous êtes au bon endroit !<br><br> 
+        En plus du scripting simple, ce blog est aussi destiné à partager des astuces sur le WPF au travers de PowerShell.</p>
+    </div> 
+    <div id="sidebar-links" class="border padding-left">
+        <h1>Liens</h1>
+        <div id="sidebar-links-wrapper">
+            <a href="https://www.linkedin.com/in/tim-gillotin/">
+    <svg id="linkedin-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="link-icons">
+        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+    </svg>
+</a>
+<a href="https://github.com/TimGTN">
+    <svg id="github-icon" xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 24 24" class="link-icons">
+        <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+    </svg>
+</a>
+        </div>
+    </div>
+    <div id="sidebar-toc" class="border ">
+        <h1>Chapitres</h1>
+        <div class="toc"></div>
+    </div>
+</aside>
+    </main>
+    <footer>
+    <div id="footer-title-wrapper">
+        <svg viewBox="0 0 107.615 20.017" preserveAspectRatio="xMidYMid" xmlns="http://www.w3.org/2000/svg">
+            <path d="m6.437 11.088 3.572-1.786V4.65L6.437 2.853 2.853 4.65V9.3zM0 18.95V1.426L2.853 0v1.786L6.437 0l6.437 3.212v7.516l-6.437 3.225-3.584-1.799v6.797zM21.096 20.017l-6.436-3.212 2.852-1.426 3.584 1.786 3.572-1.786v-4.651l-3.572-1.786-5.73 2.865V2.853L21.097 0l4.292 2.146V5.01l-4.292-2.158-2.865 1.438v3.212l2.865-1.426 6.437 3.225v7.503zM43.619 17.165l3.572-1.786v-3.572l-3.572-1.798-3.584 1.798v3.572zm-3.584-8.223 6.437-3.225V4.291l-2.853-1.438-3.584 1.798zm3.584 11.075-3.584-1.773v.707h-2.853V1.426L40.035 0v1.786L43.619 0l5.718 2.853v4.303l-2.865 1.426 3.584 1.786v6.437zM56.133 18.95v-7.503l-4.291-2.145V1.786L54.694.36v7.503l2.865 1.439 2.865-1.439V1.786L63.29.36v8.942l-4.303 2.145v7.504zM77.23 18.95V3.573L75.083 4.65 72.23 3.212 78.656 0l6.436 3.212-2.864 1.439-2.146-1.08v15.38zM85.812 18.95V1.787L88.664.36v18.59zM90.45 18.95V2.506L95.448 0l3.585 1.786L102.605 0l5.01 2.505v16.446h-2.865V3.93l-2.145-1.078-2.146 1.079V18.95h-2.865V3.93l-2.146-1.078-2.145 1.079V18.95z"/>
+        </svg>
+    </div>
+    <div id="footer-contents">
+        <span>© 2024</span>
+        <a href="/">PsByTim</a>
+        <div id="footer-socials">
+            <a href="https://www.linkedin.com/in/tim-gillotin/">
+    <svg id="linkedin-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="link-icons">
+        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+    </svg>
+</a>
+<a href="https://github.com/TimGTN">
+    <svg id="github-icon" xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 24 24" class="link-icons">
+        <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+    </svg>
+</a> 
+        </div>
+    </div>
+
+</footer>
+    <button id="btn-scroll-top" title="Remonter au début">
+    <i class="fa-solid fa-chevron-up"></i>
+</button>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.27.4/tocbot.min.js"></script>
+    <script src="/assets/js/post.js"></script>
+    
+    <script src="/assets/js/simple-jekyll-search-modified.js"></script>
+    <script src="/assets/js/default.js"></script>
+    
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/assets/data/search.json',
+        searchResultTemplate: '<article class="post-tile" >    <a href="{url}">        <div class="post-tile-content">            <div class="post-tile-img-container">                <img src="{image}" class="post-tile-image">            </div>                        <div class="post-tile-text">                <div class="post-tile-meta">                    <i class="fa-regular fa-calendar"></i>                    <span>{date}</span>                    <i id="tag-icon" class="fa-solid fa-tags"></i>                    <span>{tags}</span>                </div>                <h2>{title}</h2>                           <p>{description}</p>            </div>                     </div>                      </a></article>',
+        excludeKeys: ['date', 'image']
+    })
+</script>
+  </body>
+</html>
